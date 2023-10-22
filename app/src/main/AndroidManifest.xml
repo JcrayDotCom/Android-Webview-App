@@ -18,7 +18,9 @@
         <screen android:screenSize="normal" android:screenDensity="hdpi" />
         <screen android:screenSize="normal" android:screenDensity="xhdpi" />
     </compatible-screens>
+    
     <application
+        android:exported="false"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:usesCleartextTraffic="true"
@@ -37,6 +39,4 @@
         </intent-filter>
     </activity>
     </application>
-
-
 </manifest>
