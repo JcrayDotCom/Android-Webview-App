@@ -20,7 +20,7 @@
     </compatible-screens>
     
     <application
-        android:exported="false"
+        android:exported="true"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:usesCleartextTraffic="true"
@@ -30,7 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
     <activity
-        android:exported="false"
+        android:exported="true"
         android:name="com.webview.myapplication.MainActivity"
         android:configChanges="orientation|screenSize"
         android:label="@string/app_name">

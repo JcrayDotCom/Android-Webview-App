@@ -24,26 +24,10 @@ public class MainActivity extends Activity {
     private final int STORAGE_PERMISSION_CODE = 1;
     private WebView mWebView;
 
-    private void requestStoragePermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Permission needed")
-                    .setMessage("This permission is needed to download files")
-                    .setPositiveButton("ok", (dialog, which) -> ActivityCompat.requestPermissions(MainActivity.this,
-                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE))
-                    .setNegativeButton("cancel", (dialog, which) -> dialog.dismiss())
-                    .create().show();
-        } else {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-        }
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     @SuppressLint("SetJavaScriptEnabled")
     protected void onCreate(Bundle savedInstanceState) {
-        requestStoragePermission();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mWebView = findViewById(R.id.activity_main_webview);
